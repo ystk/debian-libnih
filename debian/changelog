@@ -1,0 +1,86 @@
+libnih (1.0.3-4.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Run dh-autoreconf to update config.{sub,guess} and
+    {libtool,aclocal}.m4, necessary for some new ports.  Thanks Mauricio
+    Faria de Oliveira.  (Closes: #689622)
+
+ -- Manuel A. Fernandez Montecelo <mafm@debian.org>  Tue, 15 Jul 2014 20:06:36 +0100
+
+libnih (1.0.3-4.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Cherry-pick from upstream: update dbus code generator to allow for empty
+    lists for type 'as'.  Closes: #728036.
+
+ -- Steve Langasek <vorlon@debian.org>  Mon, 11 Nov 2013 07:37:27 +0000
+
+libnih (1.0.3-4.1) unstable; urgency=low
+
+  * Non-maintainer Upload.
+
+  [ Petr Lautrbach <plautrba@redhat.com>, Dmitrijs Ledkovs ]
+  * Fallback to lstat, if dirent.d_type is not available (not portable)
+    Closes: #695604
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Mon, 31 Dec 2012 18:32:21 +0100
+
+libnih (1.0.3-4) unstable; urgency=low
+
+  * Rebuild for new libc to update versioned dependency; this comes from
+    the __abort_msg dependency, dpkg-shlibs needs overriding since this is
+    actually a weak link, but this rebuild fixes things for now.
+    Closes: #625257.
+
+ -- Scott James Remnant <scott@netsplit.com>  Mon, 02 May 2011 15:08:33 -0700
+
+libnih (1.0.3-3) unstable; urgency=low
+
+  * New maintainer.  Closes: #624442.
+
+ -- Scott James Remnant <scott@netsplit.com>  Thu, 28 Apr 2011 14:26:05 -0700
+
+libnih (1.0.3-2) unstable; urgency=low
+
+  * Bump build dependency on libdbus-1-dev and dbus to (>= 1.4) for Unix file
+    descriptor passing support.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 10 Feb 2011 20:25:18 +0100
+
+libnih (1.0.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump debhelper compatibility level to 8 and update build dependency
+    accordingly.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 07 Feb 2011 22:19:13 +0100
+
+libnih (1.0.2-2) unstable; urgency=low
+
+  * Install library development files to /usr/lib and not /lib.
+  * Remove libtool *.la files as there are no reverse dependencies referencing
+    them.
+  * Bump Standards-Version to 3.9.1. No further changes.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 02 Jan 2011 21:09:40 +0100
+
+libnih (1.0.2-1) unstable; urgency=low
+
+  * Initial upload to Debian. Closes: #585071
+  * Based on the Ubuntu package for Lucid done by Scott James Remnant with the
+    following changes:
+    - Switch packages to priority optional.
+    - Use binary:Version instead of Source-Version.
+    - Bump Standards-Version to 3.8.4.
+    - Add Homepage and Vcs-* fields.
+    - Don't symlink /usr/share/doc directories.
+    - Refer to versioned /usr/share/common-licenses/GPL-2 file in
+      debian/copyright.
+    - List all symbols explicitly instead of using a wildcard and add symbols
+      introduced in 1.0.1.
+    - Use the symbols files to create the correct version info instead of
+      specifying it manually via shlibs.
+    - Switch to source format 3.0 (quilt).
+    - Add watch file to track new upstream releases.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 13 Jun 2010 23:36:52 +0200
